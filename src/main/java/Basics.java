@@ -148,9 +148,9 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
-        String[] new_str = to_split.split("");
-        for(int i = 0; i >= new_str.length; i++){
-            ret.appendCodePoint(new_str[i].charAt(0));
+        String[] new_str = to_split.split(" ");
+        for(int i = 0; i < new_str.length; i++){
+            ret.append(new_str[i].charAt(0));
         }
         return ret.toString();
     }
@@ -178,10 +178,11 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-        for(int i = 0; i<=arr.length;i++){
-            current_sum+=arr[i];
+        for(int i = 0; i < arr.length; i++){
+            if(i%2 != 0){
+                current_sum += arr[i];
+            }
         }
-
         return current_sum;
     }
 
